@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>  <link rel="stylesheet" href="C:\Users\Ylia\Desktop\сайт лаба 3\vercel\style.css"> <link rel="icon" href="../Icon/favicon.ico" type="image/x-icon">
+
+
+<meta charset="utf-8">
+<title>index.html2</title>
+</head>	
+	
+
+	<body>
+	<header> <div class="martop">
+	<div class="box">
+		<nav class="nav"> 
+		<a href="index.html"><img src="../Pictures/Логотип.png" width="190" height="30" alt="ЛОГОТИП" class="pushr"></a>
+		<a href="../Pictures/Экран%20загрузки.gif" class="push1">О нас</a>
+		<a href="index2.html" class="push1">Курсы</a>
+		<a href="index3.html">Контакты</a>
+		<a href="../Pictures/Экран%20загрузки.gif"><img src="../Pictures/Корзина.png" width="35" height="30"  alt="корзина" class="push"></a>
+		</nav>
+	</div> </div>
+	</header>
+
+	
+	<div class="gallery">
+  <figure class="gallery__item gallery__item--1">
+    <img src="../Pictures/Курс%20Дизайн%20сайтов.png" class="gallery__img" alt="Image 1">
+  </figure>
+  <figure class="gallery__item gallery__item--2">
+    <img src="../Pictures/Курс%20дизайн%20рекламы.png" class="gallery__img" alt="Image 2">
+  </figure>
+  <figure class="gallery__item gallery__item--3">
+    <img src="../Pictures/Курс%20граф%20дизайн.png" class="gallery__img" alt="Image 3">
+  </figure>
+	</div>
+	
+
+	<div>
+
+<button id="buy1" class="button blue">
+  
+ <span>Купить</span>
+</button>
+	<button id="buy2" class="button blue">
+  
+ <span>Купить</span>
+</button>
+	<button id="buy3" class="button blue">
+  
+ <span>Купить</span>
+</button>
+	
+	</div>
+	
+	
+	
+	<div class="gallery1"><div class="footer">
+	<footer><p></p> <p></p> <h5>OOO "SHADER" Company<br>Все права защищены<br>Интернет-портал образовательных курсов - онлайн-школа "SHADER"</h5>
+		</footer></div></div>
+		
+<div id="parent_popup">
+  <div id="popup">
+<h1>Внимание</h1>
+    <p>На данный момент покупка курсов недоступна!</p>
+    <p>Приносим свои извинения.</p>
+<a class="close" title="Закрыть" onclick="document.getElementById('parent_popup').style.display='none';"></a>
+</div>
+</div>
+<a class="close" title="Закрыть" onclick="document.getElementById('parent_popup').style.display='none';"></a>	
+<script>
+	var delay_popup = 1000;
+	setTimeout("document.getElementById('parent_popup').style.display='block'", delay_popup);
+</script>
+
+</body>
+</html>
