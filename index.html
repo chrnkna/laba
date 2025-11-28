@@ -1,5 +1,39 @@
+[file name]: index.html
+[file content begin]
 <!doctype html>
-<html lang="ru"><head><link rel="stylesheet" href="../style.css"><link rel="icon" href="../Icon/favicon.ico" type="image/x-icon">
+<html lang="ru"><head>
+<link rel="stylesheet" href="C:\Users\Ylia\Desktop\сайт лаба 3\vercel\style.css">
+<link rel="icon" href="../Icon/favicon.ico" type="image/x-icon">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("kuDg8f4MwM6g9ovbZ");
+  })();
+  
+  function sendEmail(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    // Показываем состояние загрузки
+    submitBtn.innerHTML = 'Отправка...';
+    submitBtn.disabled = true;
+    
+    emailjs.sendForm('service_9068ylc', 'template_nh2rt4n', form)
+      .then(function(response) {
+        alert('Спасибо! Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+        form.reset();
+        submitBtn.innerHTML = 'Отправить заявку';
+        submitBtn.disabled = false;
+      }, function(error) {
+        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+        console.error('EmailJS Error:', error);
+        submitBtn.innerHTML = 'Отправить заявку';
+        submitBtn.disabled = false;
+      });
+  }
+</script>
 	
 <meta charset="utf-8">
 <title>index.html</title>
@@ -53,11 +87,60 @@
 	<p></p>
 	
 	<div class="container"><h4>Мы делаем обучение интересным</h4></div>
-	
-	
+
+	<!-- Форма обратной связи -->
+	<div class="feedback-section">
+		<div class="container">
+			<h3>ОСТАВЬТЕ ЗАЯВКУ</h3>
+		</div>
+		<div class="container">
+			<h2>И получите бесплатную консультацию по выбору курса</h2>
+		</div>
+		
+		<div class="feedback-form">
+			<form id="main-feedback-form" onsubmit="sendEmail(event)">
+				<div class="form-row">
+					<div class="form-group">
+						<label for="main-name">Ваше имя:</label>
+						<input type="text" id="main-name" name="from_name" required>
+					</div>
+					
+					<div class="form-group">
+						<label for="main-phone">Ваш телефон:</label>
+						<input type="tel" id="main-phone" name="from_phone" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="main-email">Ваш email:</label>
+					<input type="email" id="main-email" name="from_email" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="main-course">Интересующий курс:</label>
+					<select id="main-course" name="course">
+						<option value="Графический дизайн с нуля">Графический дизайн с нуля</option>
+						<option value="Дизайн сайтов">Дизайн сайтов</option>
+						<option value="Дизайн рекламы">Дизайн рекламы</option>
+						<option value="Не определился">Пока не определился</option>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<label for="main-message">Ваш вопрос или комментарий:</label>
+					<textarea id="main-message" name="message" rows="4" placeholder="Расскажите о ваших целях обучения..."></textarea>
+				</div>
+				
+				<button type="submit" class="button blue">
+					<span>Отправить заявку</span>
+				</button>
+			</form>
+		</div>
+	</div>
 	
 	<footer><div class="container"> <p></p> <p></p> <h5>OOO "SHADER" Company<br>Все права защищены<br>Интернет-портал образовательных курсов - онлайн-школа "SHADER"</h5>
 		</div></footer>
 </body>
 	
 </html>
+[file content end]
